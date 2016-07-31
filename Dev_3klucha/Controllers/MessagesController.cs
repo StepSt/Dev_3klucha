@@ -19,7 +19,7 @@ namespace Dev_3klucha
         {
             
             protected int count = 1;
-            protected string order;
+            string order = "";
             public async Task StartAsync(IDialogContext context)
             {
                 context.Wait(MessageReceivedAsync);
@@ -46,17 +46,39 @@ namespace Dev_3klucha
                             switch (message.Text)
                             {
                                 case "/start":
-                                     
                                     telegram.Start(argument);                                    
                                     break;
                                 case "О воде":
                                     await context.PostAsync(telegram.Abut_water());                                
                                     break;
+                                case "Покупка":
+                                    telegram.By(argument);
+                                    break;
+                                case "Акции":
+                                    await context.PostAsync(telegram.Sale());
+                                    break;
+                                case "Объем 18,9л":
+                                    order = $"{message.Text} ";
+                                    telegram.Count(argument);
+                                    break;
+                                case "Объем 5л":
+                                    order = $"{message.Text} ";
+                                    telegram.Count(argument);
+                                    break;
+                                case "Объем 1,5л":
+                                    order = $"{message.Text} ";
+                                    telegram.Count(argument);
+                                    break;
+                                case "2":
+                                case "3":
+                                case "4":
+                                    order += $"Количество бутылок: {message.Text}";
+                                    break;
                             }
                             break;
                             #endregion
                     }
-                    await context.PostAsync(string.Format("{0}: You said {1}", this.count++, message.Text));
+                    await context.PostAsync(string.Format($"{this.count++}: You said {message.Text}; order {order}"));
                     context.Wait(MessageReceivedAsync);
                 }
             }
