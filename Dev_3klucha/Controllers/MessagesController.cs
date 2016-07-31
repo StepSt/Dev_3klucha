@@ -17,44 +17,16 @@ namespace Dev_3klucha
         [Serializable]
         public class EchoDialog : IDialog<object>
         {
-            #region KeyBot_Telegram
-            Telegram.Bot.Api bot = new Telegram.Bot.Api("247849259:AAEaAWQG10yLZIMbq6wUscJWo0eqVchY4pg");
-            Telegram.Bot.Types.ReplyMarkups.IReplyMarkup keybot = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-            {
-                Keyboard = new Telegram.Bot.Types.KeyboardButton[1][]
-                {
-          new Telegram.Bot.Types.KeyboardButton[] {"О воде","Покупка","Акции"},
-                }
-            };
-            Telegram.Bot.Types.ReplyMarkups.IReplyMarkup keybot_product = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-            {
-                Keyboard = new Telegram.Bot.Types.KeyboardButton[1][]
-               {
-          new Telegram.Bot.Types.KeyboardButton[] {"Объем 18,9л", "Объем 5л", "Объем 1,5л" }
-               }
-            };
-            Telegram.Bot.Types.ReplyMarkups.IReplyMarkup keybot_product_qt = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-            {
-                Keyboard = new Telegram.Bot.Types.KeyboardButton[1][]
-               {
-          new Telegram.Bot.Types.KeyboardButton[] {"2", "3", "4"},
-               }
-            };
-            Telegram.Bot.Types.ReplyMarkups.IReplyMarkup keybot_ok = new Telegram.Bot.Types.ReplyMarkups.ReplyKeyboardMarkup
-            {
-                Keyboard = new Telegram.Bot.Types.KeyboardButton[1][]
-               {
-          new Telegram.Bot.Types.KeyboardButton[] {"Заказать"},
-               }
-            };
-            #endregion
+            
             protected int count = 1;
+            protected string order;
             public async Task StartAsync(IDialogContext context)
             {
                 context.Wait(MessageReceivedAsync);
             }
             public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
             {
+                My_Telegram telegram = new My_Telegram();
                 var message = await argument;
                 if (message.Text == "reset")
                 {
@@ -67,6 +39,23 @@ namespace Dev_3klucha
                 }
                 else
                 {
+                    switch (message.ChannelId)
+                    {
+                        #region Telegram
+                        case "telegram":
+                            switch (message.Text)
+                            {
+                                case "/start":
+                                     
+                                    telegram.Start(argument);                                    
+                                    break;
+                                case "О воде":
+                                    await context.PostAsync(telegram.Abut_water());                                
+                                    break;
+                            }
+                            break;
+                            #endregion
+                    }
                     await context.PostAsync(string.Format("{0}: You said {1}", this.count++, message.Text));
                     context.Wait(MessageReceivedAsync);
                 }
