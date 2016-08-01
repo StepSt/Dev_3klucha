@@ -39,3 +39,7 @@ c:\users\admin\documents\visual studio 2015\Projects\Dev_3klucha\Dev_3klucha\bin
 c:\users\admin\documents\visual studio 2015\Projects\Dev_3klucha\Dev_3klucha\obj\Release\Dev_3klucha.csprojResolveAssemblyReference.cache
 c:\users\admin\documents\visual studio 2015\Projects\Dev_3klucha\Dev_3klucha\obj\Release\Bot Application1.dll
 c:\users\admin\documents\visual studio 2015\Projects\Dev_3klucha\Dev_3klucha\obj\Release\Bot Application1.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\Dev_3klucha\Dev_3klucha\bin\EntityFramework.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\Dev_3klucha\Dev_3klucha\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\Dev_3klucha\Dev_3klucha\bin\EntityFramework.xml
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\Dev_3klucha\Dev_3klucha\bin\EntityFramework.SqlServer.xml
