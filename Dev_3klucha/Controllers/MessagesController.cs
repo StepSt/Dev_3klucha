@@ -21,7 +21,7 @@ namespace Dev_3klucha
             
             protected int count = 1;
             string order = "";
-            double price = 0.0;
+            decimal price = 0;
             public async Task StartAsync(IDialogContext context)
             {
                 context.Wait(MessageReceivedAsync);
@@ -29,6 +29,7 @@ namespace Dev_3klucha
             public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> argument)
             {
                 My_Telegram telegram = new My_Telegram();
+                DbDev3klucha customers = new DbDev3klucha();
                 var message = await argument;
                 if (message.Text == "reset")
                 {
@@ -63,23 +64,24 @@ namespace Dev_3klucha
                                     break;
                                 case "Объем 18,9л":
                                     order = $"{message.Text} ";
-                                    price = Properties.Settings.Default.Price_18;
+                                    C3kuhca_product product = customers.GetProductEf_id(1);
+                                    price = product.ProductPrice; //Properties.Settings.Default.Price_18;
                                     telegram.Count(argument);
                                     break;
                                 case "Объем 5л":
                                     order = $"{message.Text} ";
-                                    price = Properties.Settings.Default.Price_5;
+                                    //price = Properties.Settings.Default.Price_5;
                                     telegram.Count(argument);
                                     break;
                                 case "Объем 1,5л":
                                     order = $"{message.Text} ";
-                                    price = Properties.Settings.Default.Price_1;
+                                    //price = Properties.Settings.Default.Price_1;
                                     telegram.Count(argument);
                                     break;
                                 case "2":
                                 case "3":
                                 case "4":
-                                    order += $"Количество бутылок: {message.Text} Цена: {double.Parse(message.Text)*price}";
+                                    order += $"Количество бутылок: {message.Text} Цена: {decimal.Parse(message.Text)*price}";
                                     telegram.Asc(argument);
                                     break;
                                 case "Заказать":
@@ -92,22 +94,22 @@ namespace Dev_3klucha
                         #endregion
                         #region Emulator
                         case "emulator":
-                            DbDev3klucha customers = new DbDev3klucha();
-                            Product product = customers.GetProductEf_id(1);
-                            await context.PostAsync($"Продук {product.Name} + {product.Price}");
+                            //DbDev3klucha customers = new DbDev3klucha();
+                            //C3kuhca_product product = customers.GetProductEf_id(1);
+                            //await context.PostAsync($"Продук {product.ProductName} + {product.ProductPrice}");
 
-                            switch (message.Text)
-                            {
-                                case "start":
-                                    await context.PostAsync($"Добро пожаловать, хотите получать уведомления? Да/Нет");
-                                    break;
-                                case "Да":
-                                    //customers.SetCustomerUser_id(message.Recipient.Id.ToString());
-                                    break;
-                                case "price":
-                                    customers.SetProductEf_id(1, 200.0);
-                                    break;
-                            }
+                            //switch (message.Text)
+                            //{
+                            //    case "start":
+                            //        await context.PostAsync($"Добро пожаловать, хотите получать уведомления? Да/Нет");
+                            //        break;
+                            //    case "Да":
+                            //        customers.SetCustomerUser_id(message.Recipient.Id.ToString());
+                            //        break;
+                            //    case "price":
+                            //        customers.SetProductEf_id(1, 200.0);
+                            //        break;
+                            //}
                             break;
                             #endregion
                     }

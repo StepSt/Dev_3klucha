@@ -126,15 +126,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.htm" />
-    <Content Include="Dev_3klucha_Model.Context.tt">
+    <Content Include="DevEngIntBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dev_3klucha_Model.edmx</DependentUpon>
-      <LastGenOutput>Dev_3klucha_Model.Context.cs</LastGenOutput>
+      <DependentUpon>DevEngIntBase.edmx</DependentUpon>
+      <LastGenOutput>DevEngIntBase.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Dev_3klucha_Model.tt">
+    <Content Include="DevEngIntBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Dev_3klucha_Model.edmx</DependentUpon>
-      <LastGenOutput>Dev_3klucha_Model.cs</LastGenOutput>
+      <DependentUpon>DevEngIntBase.edmx</DependentUpon>
+      <LastGenOutput>DevEngIntBase.cs</LastGenOutput>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config">
@@ -143,33 +143,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="C3kuhca_product.cs">
+      <DependentUpon>DevEngIntBase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Customer.cs">
-      <DependentUpon>Dev_3klucha_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="DbDev3klucha.cs" />
-    <Compile Include="Dev_3klucha_Model.Context.cs">
+    <Compile Include="DevEngIntBase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dev_3klucha_Model.Context.tt</DependentUpon>
+      <DependentUpon>DevEngIntBase.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dev_3klucha_Model.cs">
+    <Compile Include="DevEngIntBase.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dev_3klucha_Model.tt</DependentUpon>
+      <DependentUpon>DevEngIntBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dev_3klucha_Model.Designer.cs">
+    <Compile Include="DevEngIntBase.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dev_3klucha_Model.edmx</DependentUpon>
+      <DependentUpon>DevEngIntBase.edmx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="My_Telegram.cs" />
-    <Compile Include="Product.cs">
-      <DependentUpon>Dev_3klucha_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -179,12 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <EntityDeploy Include="Dev_3klucha_Model.edmx">
+    <EntityDeploy Include="DevEngIntBase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Dev_3klucha_Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>DevEngIntBase.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Dev_3klucha_Model.edmx.diagram">
-      <DependentUpon>Dev_3klucha_Model.edmx</DependentUpon>
+    <Content Include="DevEngIntBase.edmx.diagram">
+      <DependentUpon>DevEngIntBase.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\3klucha.pubxml" />
     <None Include="Properties\Settings.settings">

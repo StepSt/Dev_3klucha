@@ -1,0 +1,31 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Dev_3klucha.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Price_18" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="Price_5" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="Price_1" Type="System.Double" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="DbConnect" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=WIN-B3LN6C1S6OE\SQLEXPRESS;Initial Catalog=Dev_3klucha;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=WIN-B3LN6C1S6OE\SQLEXPRESS;Initial Catalog=Dev_3klucha;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="DevEngInt_Base_Conntct" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=devengint.database.windows.net;Initial Catalog=DevEngInt_Base;Persist Security Info=True;User ID=StepSt;Password=537608Sst537608&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=devengint.database.windows.net;Initial Catalog=DevEngInt_Base;Persist Security Info=True;User ID=StepSt;Password=537608Sst537608</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
